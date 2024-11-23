@@ -1,4 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Talabat.Core.Entites;
+using Talabat.Core.Repositories;
+using Talabat.Repository;
 using Talabat.Repository.Data;
 
 namespace Talabat.APIS
@@ -18,6 +21,9 @@ namespace Talabat.APIS
 			{
 				Options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 			});
+
+
+			builder.Services.AddScoped(typeof(IGenaricRepository<>), typeof(GenericRepository<>));
 
 			#endregion Configure Services For Add services to the container.
 
