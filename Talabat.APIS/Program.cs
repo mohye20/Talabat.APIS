@@ -5,7 +5,7 @@ namespace Talabat.APIS
 {
 	public class Program
 	{
-		public static void Main(string[] args)
+		public static async Task Main(string[] args)
 		{
 			var builder = WebApplication.CreateBuilder(args);
 
@@ -18,11 +18,27 @@ namespace Talabat.APIS
 			{
 				Options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 			});
-			#endregion
+
+			#endregion Configure Services For Add services to the container.
 
 			var app = builder.Build();
 
+			#region Update-Database
+
+			//StoreContext DbContext = new StoreContext(); // Invalid
+			//await DbContext.Database.MigrateAsync();
+
+			// Group of Services Life Time Scooped
+			using var Scope = app.Services.CreateScope();
+			// Services its Self
+			var Services = Scope.ServiceProvider;
+			//Ask CLR For Creating Object From DbContext Explicitly
+			var DbContext = Services.GetRequiredService<StoreContext>();
+			await DbContext.Database.MigrateAsync();
+			#endregion Update-Database
+
 			#region Configure the HTTP request pipeline.
+
 			if (app.Environment.IsDevelopment())
 			{
 				app.UseSwagger();
@@ -33,11 +49,11 @@ namespace Talabat.APIS
 
 			app.UseAuthorization();
 
-
 			app.MapControllers();
 
-			#endregion
-			app.Run(); 
+			#endregion Configure the HTTP request pipeline.
+
+			app.Run();
 		}
 	}
 }
