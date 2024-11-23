@@ -32,9 +32,20 @@ namespace Talabat.APIS
 			using var Scope = app.Services.CreateScope();
 			// Services its Self
 			var Services = Scope.ServiceProvider;
-			//Ask CLR For Creating Object From DbContext Explicitly
-			var DbContext = Services.GetRequiredService<StoreContext>();
-			await DbContext.Database.MigrateAsync();
+
+			var LoggerFactory = Services.GetRequiredService<ILoggerFactory>();
+			try
+			{
+				//Ask CLR For Creating Object From DbContext Explicitly
+				var DbContext = Services.GetRequiredService<StoreContext>();
+				await DbContext.Database.MigrateAsync();
+			}
+			catch (Exception Ex)
+			{
+				var Logger = LoggerFactory.CreateLogger<Program>();
+				Logger.LogError(Ex,"An Error Occured During Appling Migration");
+			}
+
 			#endregion Update-Database
 
 			#region Configure the HTTP request pipeline.
