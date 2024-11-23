@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using Talabat.Core.Entites;
+using Talabat.Repository.Data.Configurations;
 
 namespace Talabat.Repository.Data
 {
@@ -7,6 +9,13 @@ namespace Talabat.Repository.Data
 	{
 		public StoreContext(DbContextOptions<StoreContext> options) : base(options)
 		{
+		}
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			//modelBuilder.ApplyConfiguration(new ProductConfiguration());
+			modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+			base.OnModelCreating(modelBuilder);
 		}
 
 		public DbSet<Product> Products { get; set; }
