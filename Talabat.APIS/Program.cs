@@ -37,8 +37,12 @@ namespace Talabat.APIS
 			try
 			{
 				//Ask CLR For Creating Object From DbContext Explicitly
-				var DbContext = Services.GetRequiredService<StoreContext>();
-				await DbContext.Database.MigrateAsync();
+				var dbContext = Services.GetRequiredService<StoreContext>();
+				await dbContext.Database.MigrateAsync();
+				#region Data-Seeding
+				await StoreContextSeed.SeedAsync(dbContext);
+				#endregion
+
 			}
 			catch (Exception Ex)
 			{
@@ -48,6 +52,7 @@ namespace Talabat.APIS
 
 			#endregion Update-Database
 
+		
 			#region Configure the HTTP request pipeline.
 
 			if (app.Environment.IsDevelopment())
