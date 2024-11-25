@@ -95,6 +95,8 @@ namespace Talabat.APIS
 
 			app.UseStaticFiles();
 
+			app.UseStatusCodePagesWithReExecute("/error/{0}");
+
 			app.UseHttpsRedirection();
 
 			app.UseAuthorization();
