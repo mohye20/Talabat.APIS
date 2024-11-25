@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GHOuHRJr4DtzuXeBGfa+JQNyCNmO5qwgl3aFrJFRZn4=",
+  "Hash": "pX8NjraYB0AU7eCklYuIaqxGHPZLVvB/O7RvS9CHhNA=",
   "Source": "Talabat.APIS",
   "BasePath": "_content/Talabat.APIS",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Product\\hat-core1.png",
+      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Products\\hat-core1.png",
       "SourceId": "Talabat.APIS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\",
       "BasePath": "_content/Talabat.APIS",
-      "RelativePath": "Images/Product/hat-core1.png",
+      "RelativePath": "Images/Products/hat-core1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -33,15 +33,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Product\\hat-core1.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\hat-core1.png"
     },
     {
-      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Product\\hat-react1.png",
+      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Products\\hat-react1.png",
       "SourceId": "Talabat.APIS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\",
       "BasePath": "_content/Talabat.APIS",
-      "RelativePath": "Images/Product/hat-react1.png",
+      "RelativePath": "Images/Products/hat-react1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,15 +52,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Product\\hat-react1.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\hat-react1.png"
     },
     {
-      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Product\\hat-react2.png",
+      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Products\\hat-react2.png",
       "SourceId": "Talabat.APIS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\",
       "BasePath": "_content/Talabat.APIS",
-      "RelativePath": "Images/Product/hat-react2.png",
+      "RelativePath": "Images/Products/hat-react2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -71,15 +71,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Product\\hat-react2.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\hat-react2.png"
     },
     {
-      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Product\\sb-ang1.png",
+      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Products\\sb-ang1.png",
       "SourceId": "Talabat.APIS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\",
       "BasePath": "_content/Talabat.APIS",
-      "RelativePath": "Images/Product/sb-ang1.png",
+      "RelativePath": "Images/Products/sb-ang1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -90,15 +90,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Product\\sb-ang1.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\sb-ang1.png"
     },
     {
-      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Product\\sb-ang2.png",
+      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Products\\sb-ang2.png",
       "SourceId": "Talabat.APIS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\",
       "BasePath": "_content/Talabat.APIS",
-      "RelativePath": "Images/Product/sb-ang2.png",
+      "RelativePath": "Images/Products/sb-ang2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -109,15 +109,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Product\\sb-ang2.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\sb-ang2.png"
     },
     {
-      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Product\\sb-core1.png",
+      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Products\\sb-core1.png",
       "SourceId": "Talabat.APIS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\",
       "BasePath": "_content/Talabat.APIS",
-      "RelativePath": "Images/Product/sb-core1.png",
+      "RelativePath": "Images/Products/sb-core1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -128,15 +128,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Product\\sb-core1.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\sb-core1.png"
     },
     {
-      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Product\\sb-core2.png",
+      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Products\\sb-core2.png",
       "SourceId": "Talabat.APIS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\",
       "BasePath": "_content/Talabat.APIS",
-      "RelativePath": "Images/Product/sb-core2.png",
+      "RelativePath": "Images/Products/sb-core2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -147,15 +147,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Product\\sb-core2.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\sb-core2.png"
     },
     {
-      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Product\\sb-react1.png",
+      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Products\\sb-react1.png",
       "SourceId": "Talabat.APIS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\",
       "BasePath": "_content/Talabat.APIS",
-      "RelativePath": "Images/Product/sb-react1.png",
+      "RelativePath": "Images/Products/sb-react1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -166,15 +166,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Product\\sb-react1.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\sb-react1.png"
     },
     {
-      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Product\\sb-ts1.png",
+      "Identity": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\Images\\Products\\sb-ts1.png",
       "SourceId": "Talabat.APIS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.APIS\\wwwroot\\",
       "BasePath": "_content/Talabat.APIS",
-      "RelativePath": "Images/Product/sb-ts1.png",
+      "RelativePath": "Images/Products/sb-ts1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -185,7 +185,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Product\\sb-ts1.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\sb-ts1.png"
     }
   ]
 }
