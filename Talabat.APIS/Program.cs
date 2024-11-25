@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Talabat.APIS.Errors;
 using Talabat.APIS.Helpers;
+using Talabat.APIS.Middlewares;
 using Talabat.Core.Repositories;
 using Talabat.Repository;
 using Talabat.Repository.Data;
@@ -87,6 +88,7 @@ namespace Talabat.APIS
 
 			if (app.Environment.IsDevelopment())
 			{
+				app.UseMiddleware<ExceptionMiddleware>();
 				app.UseSwagger();
 				app.UseSwaggerUI();
 			}
