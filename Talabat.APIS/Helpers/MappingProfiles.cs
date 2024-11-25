@@ -10,7 +10,8 @@ namespace Talabat.APIS.Helpers
 		{
 			CreateMap<Product, ProductToReturnDTO>()
 				.ForMember(D => D.ProductType, O => O.MapFrom(S => S.ProductType.Name))
-				.ForMember(D => D.ProductBrand, O => O.MapFrom(S => S.ProductBrand.Name));
+				.ForMember(D => D.ProductBrand, O => O.MapFrom(S => S.ProductBrand.Name))
+				.ForMember(D=>D.PictureUrl,O=>O.MapFrom<ProductPicatureURLResolver>());
 		}
 	}
 }
