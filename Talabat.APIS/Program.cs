@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Talabat.APIS.Errors;
+using Talabat.APIS.Extensions;
 using Talabat.APIS.Helpers;
 using Talabat.APIS.Middlewares;
 using Talabat.Core.Repositories;
@@ -25,29 +26,13 @@ namespace Talabat.APIS
 				Options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 			});
 
-			//builder.Services.AddAutoMapper(M => M.AddProfile(new MappingProfiles()));
-			builder.Services.AddAutoMapper(typeof(MappingProfiles));
+			builder.Services.AddApplicationServices();
 
-			builder.Services.AddScoped(typeof(IGenaricRepository<>), typeof(GenericRepository<>));
 
-			builder.Services.Configure<ApiBehaviorOptions>(
-				Options => Options.InvalidModelStateResponseFactory = (actionContext) =>
-				{
-					// ModelState => Dic [KeyValuePair]
-					// Key = > Name Of Param
-					// Value = Errors
-					var errors = actionContext.ModelState.Where(P => P.Value.Errors.Count() > 0)
-														 .SelectMany(P => P.Value.Errors)
-														 .Select(E => E.ErrorMessage)
-														 .ToArray();
-					var ValidationErrorResponce = new ApiValidationErrorResponse()
-					{
-						Errors = errors
-					};
 
-					return new BadRequestObjectResult(ValidationErrorResponce);
-				}
-				);
+
+
+
 
 			#endregion Configure Services For Add services to the container.
 
@@ -89,8 +74,7 @@ namespace Talabat.APIS
 			if (app.Environment.IsDevelopment())
 			{
 				app.UseMiddleware<ExceptionMiddleware>();
-				app.UseSwagger();
-				app.UseSwaggerUI();
+				app.UseSwaggerMiddlewares();
 			}
 
 			app.UseStaticFiles();
