@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Talabat.Core.Entites;
 using Talabat.Core.Repositories;
+using Talabat.Core.Specifications;
 using Talabat.Repository.Data;
 
 namespace Talabat.Repository
@@ -14,6 +15,7 @@ namespace Talabat.Repository
 			_dbContext = dbContext;
 		}
 
+		// Old Version  With our Specification
 		public async Task<IEnumerable<T>> GetAllAsync()
 		{
 			if (typeof(T) == typeof(Product))
@@ -23,8 +25,25 @@ namespace Talabat.Repository
 			return await _dbContext.Set<T>().ToListAsync();
 		}
 
-		public async Task<T> GetByIdAsync(int id) => await _dbContext.Set<T>().FindAsync(id);
+		public async Task<T> GetByIdAsync(int id)
+		{
+			return await _dbContext.Set<T>().FindAsync(id);
+		}
 
-		//=> await _dbContext.Set<T>().Where(X => X.Id == id).FirstOrDefaultAsync();
+		// New version Specification Design Pattern
+		public async Task<IEnumerable<T>> GetAllWithSpecificationAsync(ISpecification<T> specification)
+		{
+			return await ApplySpecification(specification).ToListAsync();
+		}
+
+		public async Task<T> GetByIdWithSpecificationAsync(ISpecification<T> specification)
+		{
+			return await ApplySpecification(specification).FirstOrDefaultAsync();
+		}
+
+		private IQueryable<T> ApplySpecification(ISpecification<T> specification)
+		{
+			return SpecificationEvalutor<T>.GetQuery(_dbContext.Set<T>(), specification);
+		}
 	}
 }
