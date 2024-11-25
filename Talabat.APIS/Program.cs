@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Talabat.Core.Entites;
+using Talabat.APIS.Helpers;
 using Talabat.Core.Repositories;
 using Talabat.Repository;
 using Talabat.Repository.Data;
@@ -22,6 +22,8 @@ namespace Talabat.APIS
 				Options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 			});
 
+			//builder.Services.AddAutoMapper(M => M.AddProfile(new MappingProfiles()));
+			builder.Services.AddAutoMapper(typeof(MappingProfiles));
 
 			builder.Services.AddScoped(typeof(IGenaricRepository<>), typeof(GenericRepository<>));
 
@@ -45,20 +47,21 @@ namespace Talabat.APIS
 				//Ask CLR For Creating Object From DbContext Explicitly
 				var dbContext = Services.GetRequiredService<StoreContext>();
 				await dbContext.Database.MigrateAsync();
-				#region Data-Seeding
-				await StoreContextSeed.SeedAsync(dbContext);
-				#endregion
 
+				#region Data-Seeding
+
+				await StoreContextSeed.SeedAsync(dbContext);
+
+				#endregion Data-Seeding
 			}
 			catch (Exception Ex)
 			{
 				var Logger = LoggerFactory.CreateLogger<Program>();
-				Logger.LogError(Ex,"An Error Occured During Appling Migration");
+				Logger.LogError(Ex, "An Error Occured During Appling Migration");
 			}
 
 			#endregion Update-Database
 
-		
 			#region Configure the HTTP request pipeline.
 
 			if (app.Environment.IsDevelopment())

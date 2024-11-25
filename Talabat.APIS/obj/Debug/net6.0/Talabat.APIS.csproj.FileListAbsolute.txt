@@ -79,3 +79,5 @@ C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\Talab
 C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\Talabat.Repository.dll
 C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\Talabat.Repository.pdb
 C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\Talabat.Core.pdb
+C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
