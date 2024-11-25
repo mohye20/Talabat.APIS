@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Talabat.APIS.Errors;
 using Talabat.Repository.Data;
 
 namespace Talabat.APIS.Controllers
@@ -21,7 +22,7 @@ namespace Talabat.APIS.Controllers
 
 			if (Product is null)
 			{
-				return NotFound();
+				return NotFound(new ApiResponse(404));
 			}
 			return Ok(Product);
 		}
@@ -31,25 +32,20 @@ namespace Talabat.APIS.Controllers
 		{
 			var Product = _dbContext.Products.Find(100);
 			var ProdcutToReturn = Product.ToString(); // Error
-			// Will Thorw Exception Null Reference Exception
+													  // Will Thorw Exception Null Reference Exception
 			return Ok(ProdcutToReturn);
 		}
 
 		[HttpGet("BadRequest")]
-
-		public ActionResult GetBadRequest() {
-
-			return BadRequest();
+		public ActionResult GetBadRequest()
+		{
+			return BadRequest(new ApiResponse(400));
 		}
-
 
 		[HttpGet("BadRequest/{id}")]
 		public ActionResult GetBadRquest(int id)
 		{
 			return Ok();
 		}
-
-
-
 	}
 }
