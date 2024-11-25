@@ -28,12 +28,6 @@ namespace Talabat.APIS
 
 			builder.Services.AddApplicationServices();
 
-
-
-
-
-
-
 			#endregion Configure Services For Add services to the container.
 
 			var app = builder.Build();
