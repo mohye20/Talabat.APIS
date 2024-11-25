@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Talabat.APIS.DTOs;
 using Talabat.Core.Entites;
@@ -39,7 +38,8 @@ namespace Talabat.APIS.Controllers
 		{
 			var Specification = new ProductWithBrandAndTypeSpecification(id);
 			var Product = await _ProductRepo.GetByIdWithSpecificationAsync(Specification);
-			return Ok(Product);
+			var MappedProduct = _mapper.Map<Product, ProductToReturnDTO>(Product);
+			return Ok(MappedProduct);
 		}
 	}
 }
