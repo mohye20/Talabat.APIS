@@ -81,13 +81,22 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Talabat.Core.Entites.Product",
+        "Type": "Talabat.APIS.DTOs.ProductToReturnDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
           "text/json"
         ],
         "StatusCode": 200
+      },
+      {
+        "Type": "Talabat.APIS.Errors.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
       }
     ]
   },
