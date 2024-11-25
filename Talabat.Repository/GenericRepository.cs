@@ -16,12 +16,8 @@ namespace Talabat.Repository
 		}
 
 		// Old Version  With our Specification
-		public async Task<IEnumerable<T>> GetAllAsync()
+		public async Task<IReadOnlyList<T>> GetAllAsync()
 		{
-			if (typeof(T) == typeof(Product))
-			{
-				return (IEnumerable<T>)await _dbContext.Products.Include(P => P.ProductBrand).Include(P => P.ProductType).ToListAsync();
-			}
 			return await _dbContext.Set<T>().ToListAsync();
 		}
 
@@ -31,7 +27,7 @@ namespace Talabat.Repository
 		}
 
 		// New version Specification Design Pattern
-		public async Task<IEnumerable<T>> GetAllWithSpecificationAsync(ISpecification<T> specification)
+		public async Task<IReadOnlyList<T>> GetAllWithSpecificationAsync(ISpecification<T> specification)
 		{
 			return await ApplySpecification(specification).ToListAsync();
 		}

@@ -8,7 +8,7 @@ namespace Talabat.Core.Repositories
 		#region Without Specification
 
 		// Get All
-		Task<IEnumerable<T>> GetAllAsync();
+		Task<IReadOnlyList<T>> GetAllAsync();
 
 		// Get By Id
 		Task<T> GetByIdAsync(int id);
@@ -17,7 +17,7 @@ namespace Talabat.Core.Repositories
 
 		#region With Specification
 
-		Task<IEnumerable<T>>  GetAllWithSpecificationAsync(ISpecification<T> specification);
+		Task<IReadOnlyList<T>>  GetAllWithSpecificationAsync(ISpecification<T> specification);
 
 		Task<T> GetByIdWithSpecificationAsync(ISpecification<T> specification);
 
