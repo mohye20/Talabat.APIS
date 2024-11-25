@@ -12,5 +12,13 @@ namespace Talabat.Core.Specifications
 		// Signature For Property For List Of Include [Include(P=>P.ProductBrand).Include(P=> P.ProductType)]
 
 		public List<Expression<Func<T, object>>> Includes { get; set; }
+
+		// Property For Order By
+
+		public Expression<Func<T, object>> OrderBy { get; set; }
+
+		// Property For Order By Desc
+
+		public Expression<Func<T, object>> OrderByDescending { get; set; }
 	}
 }
