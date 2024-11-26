@@ -69,13 +69,18 @@
         "IsRequired": false
       },
       {
+        "Name": "PageIndex",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
         "Name": "PageSize",
         "Type": "System.Int32",
         "IsRequired": false
       },
       {
-        "Name": "PageIndex",
-        "Type": "System.Int32",
+        "Name": "Search",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
