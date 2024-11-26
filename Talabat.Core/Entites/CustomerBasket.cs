@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Talabat.Core.Entites
 {
-	internal class CustomerBasket
+	public class CustomerBasket
 	{
-		public decimal Id { get; set; }
+		public string Id { get; set; }
 
 		public List<BasketItem> Items { get; set; }
 	}

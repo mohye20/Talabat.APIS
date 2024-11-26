@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 using Talabat.APIS.Errors;
 using Talabat.APIS.Extensions;
 using Talabat.APIS.Helpers;
@@ -27,6 +28,12 @@ namespace Talabat.APIS
 			});
 
 			builder.Services.AddApplicationServices();
+
+			builder.Services.AddSingleton<IConnectionMultiplexer>(Options =>
+			{
+				var Connection = builder.Configuration.GetConnectionString("RedisConnectino");
+				return ConnectionMultiplexer.Connect(Connection);
+			});
 
 			#endregion Configure Services For Add services to the container.
 
