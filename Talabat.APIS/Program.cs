@@ -38,7 +38,7 @@ namespace Talabat.APIS
 				Options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection"));
 			});
 
-			builder.Services.AddIdentityService();
+			builder.Services.AddIdentityService(builder.Configuration);
 
 			#endregion Configure Services For Add services to the container.
 
@@ -88,15 +88,15 @@ namespace Talabat.APIS
 				app.UseSwaggerMiddlewares();
 			}
 
-			app.UseStaticFiles();
+
 
 			app.UseStatusCodePagesWithReExecute("/error/{0}");
-
+			app.UseStaticFiles();
 			app.UseHttpsRedirection();
-
+			app.UseAuthentication();
 			app.UseAuthorization();
-
 			app.MapControllers();
+
 
 			#endregion Configure the HTTP request pipeline.
 

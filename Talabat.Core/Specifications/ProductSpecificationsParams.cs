@@ -19,9 +19,9 @@
 			set { pageSize = value > 10 ? 10 : value; }
 		}
 
-		private string search;
+		private string? search;
 
-		public string Search
+		public string? Search
 		{
 			get { return search; }
 			set { search = value.ToLower(); }
