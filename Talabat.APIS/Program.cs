@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
 using Talabat.APIS.Extensions;
 using Talabat.APIS.Middlewares;
+using Talabat.Core.Entites.Identity;
 using Talabat.Repository.Data;
 using Talabat.Repository.Identity;
 
@@ -36,6 +38,8 @@ namespace Talabat.APIS
 				Options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection"));
 			});
 
+			builder.Services.AddIdentityService();
+
 			#endregion Configure Services For Add services to the container.
 
 			var app = builder.Build();
@@ -59,9 +63,12 @@ namespace Talabat.APIS
 
 				var IdentityDbContext = Services.GetRequiredService<AppIdentityDbContext>();
 				IdentityDbContext.Database.MigrateAsync();
+				var UserManger = Services.GetRequiredService<UserManager<AppUser>>();
+
 				#region Data-Seeding
 
 				await StoreContextSeed.SeedAsync(dbContext);
+				await AppIdentityDbContextSeed.SeedUserAsync(UserManger);
 
 				#endregion Data-Seeding
 			}
