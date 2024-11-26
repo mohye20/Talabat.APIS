@@ -35,6 +35,7 @@ namespace Talabat.APIS
 				return ConnectionMultiplexer.Connect(Connection);
 			});
 
+
 			#endregion Configure Services For Add services to the container.
 
 			var app = builder.Build();
