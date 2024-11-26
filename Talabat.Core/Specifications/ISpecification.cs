@@ -20,5 +20,13 @@ namespace Talabat.Core.Specifications
 		// Property For Order By Desc
 
 		public Expression<Func<T, object>> OrderByDescending { get; set; }
+
+		// Take
+		public int Take { get; set; }
+
+		// Skip
+		public int Skip { get; set; }
+
+		public bool IsPaginationEnbaled { get; set; }
 	}
 }
