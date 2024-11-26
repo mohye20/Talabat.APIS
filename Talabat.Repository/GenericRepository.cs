@@ -41,5 +41,10 @@ namespace Talabat.Repository
 		{
 			return SpecificationEvalutor<T>.GetQuery(_dbContext.Set<T>(), specification);
 		}
+
+		public async Task<int> GetCountWithSpecificationAsync(ISpecification<T> specification)
+		{
+			return await ApplySpecification(specification).CountAsync();
+		}
 	}
 }

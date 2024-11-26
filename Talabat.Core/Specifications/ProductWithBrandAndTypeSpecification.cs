@@ -32,7 +32,7 @@ namespace Talabat.Core.Specifications
 				}
 			}
 
-			ApplyPagination(Params.PageSize * Params.PageIndex - 1, Params.PageSize);
+			ApplyPagination(Params.PageSize * (Params.PageIndex - 1), Params.PageSize);
 		}
 
 		// CTOR is Used For Get Product With Id
