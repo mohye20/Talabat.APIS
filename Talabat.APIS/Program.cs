@@ -1,13 +1,9 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
-using Talabat.APIS.Errors;
 using Talabat.APIS.Extensions;
-using Talabat.APIS.Helpers;
 using Talabat.APIS.Middlewares;
-using Talabat.Core.Repositories;
-using Talabat.Repository;
 using Talabat.Repository.Data;
+using Talabat.Repository.Identity;
 
 namespace Talabat.APIS
 {
@@ -35,6 +31,10 @@ namespace Talabat.APIS
 				return ConnectionMultiplexer.Connect(Connection);
 			});
 
+			builder.Services.AddDbContext<AppIdentityDbContext>(Options =>
+			{
+				Options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection"));
+			});
 
 			#endregion Configure Services For Add services to the container.
 
@@ -57,6 +57,8 @@ namespace Talabat.APIS
 				var dbContext = Services.GetRequiredService<StoreContext>();
 				await dbContext.Database.MigrateAsync();
 
+				var IdentityDbContext = Services.GetRequiredService<AppIdentityDbContext>();
+				IdentityDbContext.Database.MigrateAsync();
 				#region Data-Seeding
 
 				await StoreContextSeed.SeedAsync(dbContext);

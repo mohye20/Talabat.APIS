@@ -84,3 +84,8 @@ C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\AutoM
 C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\Talabat.APIS.staticwebassets.runtime.json
 C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
 C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\StackExchange.Redis.dll
+C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Mohye\source\repos\Talabat.Soultion\Talabat.APIS\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
