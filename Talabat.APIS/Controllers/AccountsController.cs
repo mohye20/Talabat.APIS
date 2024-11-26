@@ -9,10 +9,12 @@ namespace Talabat.APIS.Controllers
 	public class AccountsController : ApiBaseController
 	{
 		private readonly UserManager<AppUser> _userManager;
+		private readonly SignInManager<AppUser> _signInManager;
 
-		public AccountsController(UserManager<AppUser> userManager)
+		public AccountsController(UserManager<AppUser> userManager , SignInManager<AppUser> signInManager) 
 		{
 			_userManager = userManager;
+			_signInManager = signInManager;
 		}
 
 		// Register
@@ -43,6 +45,36 @@ namespace Talabat.APIS.Controllers
 			};
 
 			return ReturnedUser; 
+		}
+
+		[HttpPost("Login")]
+		public async Task<ActionResult<UserDTO>> Login(LoginDTO model)
+		{
+			var User = await _userManager.FindByEmailAsync(model.Email);
+
+			if(User is null)
+			{
+				return Unauthorized(new ApiResponse(401));
+			}
+
+
+			var Result = await _signInManager.CheckPasswordSignInAsync(User, model.Password, false);
+
+			if (!Result.Succeeded)
+			{
+
+				return Unauthorized(new ApiResponse(401));
+			}
+
+			return Ok(new UserDTO()
+			{
+				DisplayName = User.DisplayName,
+				Email = User.Email,
+				Token = "This Will Be Token"
+
+			});
+
+
 		}
 	}
 }
