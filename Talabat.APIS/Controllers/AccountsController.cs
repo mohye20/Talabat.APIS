@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Talabat.APIS.DTOs;
 using Talabat.APIS.Errors;
 using Talabat.Core.Entites.Identity;
+using Talabat.Core.Services;
 
 namespace Talabat.APIS.Controllers
 {
@@ -10,11 +11,13 @@ namespace Talabat.APIS.Controllers
 	{
 		private readonly UserManager<AppUser> _userManager;
 		private readonly SignInManager<AppUser> _signInManager;
+		private readonly ITokenService _tokenService;
 
-		public AccountsController(UserManager<AppUser> userManager , SignInManager<AppUser> signInManager) 
+		public AccountsController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService)
 		{
 			_userManager = userManager;
 			_signInManager = signInManager;
+			_tokenService = tokenService;
 		}
 
 		// Register
@@ -41,10 +44,10 @@ namespace Talabat.APIS.Controllers
 			{
 				DisplayName = User.DisplayName,
 				Email = User.Email,
-				Token = "ThisWillBeToken"
+				Token = await _tokenService.CreateTokenAsync(User, _userManager)
 			};
 
-			return ReturnedUser; 
+			return ReturnedUser;
 		}
 
 		[HttpPost("Login")]
@@ -52,17 +55,15 @@ namespace Talabat.APIS.Controllers
 		{
 			var User = await _userManager.FindByEmailAsync(model.Email);
 
-			if(User is null)
+			if (User is null)
 			{
 				return Unauthorized(new ApiResponse(401));
 			}
-
 
 			var Result = await _signInManager.CheckPasswordSignInAsync(User, model.Password, false);
 
 			if (!Result.Succeeded)
 			{
-
 				return Unauthorized(new ApiResponse(401));
 			}
 
@@ -70,11 +71,8 @@ namespace Talabat.APIS.Controllers
 			{
 				DisplayName = User.DisplayName,
 				Email = User.Email,
-				Token = "This Will Be Token"
-
+				Token = await _tokenService.CreateTokenAsync(User, _userManager)
 			});
-
-
 		}
 	}
 }

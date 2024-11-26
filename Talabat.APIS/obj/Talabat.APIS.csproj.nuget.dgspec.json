@@ -31,6 +31,9 @@
             "projectReferences": {
               "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.Repository\\Talabat.Repository.csproj": {
                 "projectPath": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.Repository\\Talabat.Repository.csproj"
+              },
+              "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.Services\\Talabat.Services.csproj": {
+                "projectPath": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.Services\\Talabat.Services.csproj"
               }
             }
           }
@@ -206,6 +209,77 @@
           "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.36, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.Services\\Talabat.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.Services\\Talabat.Services.csproj",
+        "projectName": "Talabat.Services",
+        "projectPath": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.Services\\Talabat.Services.csproj",
+        "packagesPath": "C:\\Users\\Mohye\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Mohye\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.Core\\Talabat.Core.csproj": {
+                "projectPath": "C:\\Users\\Mohye\\source\\repos\\Talabat.Soultion\\Talabat.Core\\Talabat.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.36, )"
             }
