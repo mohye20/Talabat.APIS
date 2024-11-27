@@ -171,7 +171,7 @@
   },
   {
     "ContainingType": "Talabat.APIS.Controllers.BasketController",
-    "Method": "UpdateBasket",
+    "Method": "CreateOrUpdateBasket",
     "RelativePath": "api/Basket",
     "HttpMethod": "POST",
     "IsController": true,
@@ -179,13 +179,13 @@
     "Parameters": [
       {
         "Name": "Basket",
-        "Type": "Talabat.Core.Entites.CustomerBasket",
+        "Type": "Talabat.APIS.DTOs.CustomerBasketDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Talabat.Core.Entites.CustomerBasket",
+        "Type": "Talabat.APIS.DTOs.CustomerBasketDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
