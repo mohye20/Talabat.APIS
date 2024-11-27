@@ -1,6 +1,26 @@
 [
   {
     "ContainingType": "Talabat.APIS.Controllers.AccountsController",
+    "Method": "GetCurentUser",
+    "RelativePath": "api/Accounts/GetCurentUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Talabat.APIS.DTOs.UserDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Talabat.APIS.Controllers.AccountsController",
     "Method": "Login",
     "RelativePath": "api/Accounts/Login",
     "HttpMethod": "POST",

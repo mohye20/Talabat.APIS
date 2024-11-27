@@ -20,7 +20,11 @@ namespace Talabat.APIS.Extensions
 			Services.AddIdentity<AppUser, IdentityRole>()
 				.AddEntityFrameworkStores<AppIdentityDbContext>();
 
-			Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+			Services.AddAuthentication(Options =>
+			{
+				Options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+				Options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+			})
 				.AddJwtBearer(
 				Options =>
 				{

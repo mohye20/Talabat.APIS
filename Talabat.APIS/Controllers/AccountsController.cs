@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using Talabat.APIS.DTOs;
 using Talabat.APIS.Errors;
 using Talabat.Core.Entites.Identity;
@@ -74,5 +76,24 @@ namespace Talabat.APIS.Controllers
 				Token = await _tokenService.CreateTokenAsync(User, _userManager)
 			});
 		}
+
+		[Authorize]
+		[HttpGet("GetCurentUser")]
+
+		public async Task<ActionResult<UserDTO>> GetCurentUser()
+		{
+			var Email = User.FindFirstValue(ClaimTypes.Email);
+			var user = await _userManager.FindByEmailAsync(Email);
+			var ReturendObject = new UserDTO()
+			{
+				DisplayName = user.DisplayName,
+				Email = user.Email,
+				Token = await _tokenService.CreateTokenAsync(user, _userManager),
+
+			};
+			return Ok(ReturendObject);
+
+		}
+
 	}
 }
