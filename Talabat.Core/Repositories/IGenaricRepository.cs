@@ -23,6 +23,8 @@ namespace Talabat.Core.Repositories
 
 		Task<int> GetCountWithSpecificationAsync(ISpecification<T> specification);
 
+		Task Add(T item);
+
 
 
 
