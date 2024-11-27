@@ -18,7 +18,7 @@ namespace Talabat.APIS.Controllers
 		private readonly ITokenService _tokenService;
 		private readonly IMapper _mapper;
 
-		public AccountsController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService , IMapper mapper)
+		public AccountsController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService, IMapper mapper)
 		{
 			_userManager = userManager;
 			_signInManager = signInManager;
@@ -83,7 +83,6 @@ namespace Talabat.APIS.Controllers
 
 		[Authorize]
 		[HttpGet("GetCurentUser")]
-
 		public async Task<ActionResult<UserDTO>> GetCurentUser()
 		{
 			var Email = User.FindFirstValue(ClaimTypes.Email);
@@ -93,15 +92,12 @@ namespace Talabat.APIS.Controllers
 				DisplayName = user.DisplayName,
 				Email = user.Email,
 				Token = await _tokenService.CreateTokenAsync(user, _userManager),
-
 			};
 			return Ok(ReturendObject);
-
 		}
 
 		[Authorize]
 		[HttpGet("Address")]
-
 		public async Task<ActionResult<AddressDTO>> GetCurentUserAddress()
 		{
 			//var Eamil = User.FindFirstValue(ClaimTypes.Email);
@@ -109,6 +105,25 @@ namespace Talabat.APIS.Controllers
 			var user = await _userManager.FindUserWithAddressAsync(User);
 			var MappedAddress = _mapper.Map<Address, AddressDTO>(user?.Address);
 			return Ok(MappedAddress);
+		}
+
+		[Authorize]
+		[HttpPut("Address")]
+		
+		public async Task<ActionResult<AddressDTO>> UpdateAddress(AddressDTO UpdatedAddress)
+		{
+			var user = await _userManager.FindUserWithAddressAsync(User);
+			var MappedAdress = _mapper.Map<AddressDTO, Address>(UpdatedAddress);
+			MappedAdress.Id = user.Address.Id;
+			user.Address = MappedAdress;
+			var Result = await _userManager.UpdateAsync(user);
+			if (!Result.Succeeded)
+			{
+				return BadRequest(new ApiResponse(400));
+			}
+
+			var addressDTO = _mapper.Map<AddressDTO>(MappedAdress);
+			return Ok(addressDTO);
 		}
 
 	}
