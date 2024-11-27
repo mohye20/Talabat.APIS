@@ -10,6 +10,7 @@ namespace Talabat.Core.Entites.Order_Aggregate
 	{
 		public ProdcutItemOrdered Product { get; set; }
 
+
 		public int Quintity { get; set; }
 
 		public decimal Price { get; set; }

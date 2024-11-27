@@ -15,5 +15,7 @@ namespace Talabat.Core.Entites.Order_Aggregate
 		public string DeliveryTime { get; set; }
 
 		public decimal Cost { get; set; }
+
+
 	}
 }
