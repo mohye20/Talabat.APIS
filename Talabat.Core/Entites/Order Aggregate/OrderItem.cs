@@ -8,6 +8,18 @@ namespace Talabat.Core.Entites.Order_Aggregate
 {
 	public class OrderItem : BaseEntity
 	{
+
+		public OrderItem()
+		{
+			
+		}
+		public OrderItem(ProdcutItemOrdered product, int quintity, decimal price)
+		{
+			Product = product;
+			Quintity = quintity;
+			Price = price;
+		}
+
 		public ProdcutItemOrdered Product { get; set; }
 
 

@@ -8,6 +8,17 @@ namespace Talabat.Core.Entites.Order_Aggregate
 {
 	public class ProdcutItemOrdered
 	{
+		public ProdcutItemOrdered()
+		{
+		}
+
+		public ProdcutItemOrdered(int prodcutId, string productName, string productUrl)
+		{
+			ProdcutId = prodcutId;
+			ProductName = productName;
+			ProductUrl = productUrl;
+		}
+
 		public int ProdcutId { get; set; }
 
 		public string ProductName { get; set; }

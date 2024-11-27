@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using Talabat.Core.Entites;
+using Talabat.Core.Entites.Order_Aggregate;
 using Talabat.Repository.Data.Configurations;
 
 namespace Talabat.Repository.Data
@@ -23,5 +24,11 @@ namespace Talabat.Repository.Data
 		public DbSet<ProductType> ProductTypes { get; set; }
 
 		public DbSet<ProductBrand> ProductBrands { get; set; }
+
+		public DbSet<Order> Orders { get; set; }	
+
+		public DbSet<OrderItem> OrderItems { get; set; }
+
+		public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
 	}
 }
